@@ -1,0 +1,25 @@
+{
+	"name": "mytrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Pipeline 1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/azureml/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e9735a76-e0fb-4c01-b485-f95afa5949d0/resourceGroups/Payal_Rajawat/providers/Microsoft.Storage/storageAccounts/newworkspcae3598564359",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}

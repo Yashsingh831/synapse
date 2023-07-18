@@ -1,0 +1,51 @@
+{
+	"name": "Pipeline 1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Delete1",
+				"type": "Delete",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Binary1",
+						"type": "DatasetReference"
+					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "dev83-WorkspaceDefaultStorage",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"enableLogging": true,
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"parameters": {
+			"storageaccount": {
+				"type": "string",
+				"defaultValue": "test831"
+			},
+			"container": {
+				"type": "string",
+				"defaultValue": "test83"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-07-06T15:09:56Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
